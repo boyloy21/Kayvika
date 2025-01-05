@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+/* body {
+  @apply bg-background text-foreground; /* This will use your custom colors */
+/* }
+
+body.dark {
+  @apply bg-black text-white; /* Tailwind's built-in dark mode classes */
+/**}  */
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  body.dark {
+    @apply bg-black text-white;
+  }
+}
+/* body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+body .dark{
+  background: var(--background);
+  color: var(--foreground);
+} */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+@keyframes slideLeft {
+  from{transform: translatex(300%)}
+}
+@keyframes slideRight {
+  to{transform: translatex(300%)}
+}
+@keyframes slideUp {
+  from{transform: translateY(300%)}
+}
+@keyframes slideDown {
+  to{transform: translateY(300%)}
+}
+@keyframes rotate {
+  30%{transform: rotateZ(360deg)}
+}
+@keyframes grow {
+  50%{transform: scale(2, 2)}
+}
+@keyframes shirnk {
+  50%{transform: scale(0.5, 0.5)}
+}
+@keyframes fade {
+  100%{opacity: 1}
+}
+@keyframes colorChange{
+  0%{background-color: hsl(0, 100%, 62%)}
+  20%{background-color: hsl(221, 83%, 37%)}
+  40%{background-color: hsl(92, 86%, 30%)}
+  60%{background-color: hsl(59, 74%, 39%)}
+  80%{background-color: hsl(178, 72%, 37%)}
+  100%{background-color: hsl(12, 16%, 48%)}
+}
+@keyframes boxShadow {
+  30%{box-shadow: 0px 0px 50px hsl(60, 100%, 50%)}
+  40%{background-color: hsl(92, 86%, 30%)}
+  30%{background-color: hsl(178, 72%, 37%)}
+}
+/* .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+  background-color: hsl(209, 98%, 43%);
+  padding: 5px 5px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  /* border-bottom: 1px solid #cccccc; */
+  
+
+.logo-container {
+  
+    animation-name: rotate , boxShadow;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+    animation-timing-function: linear;
+}
+
+.alt-text {
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* .header .header-right  {
+  display: flex;
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  flex-direction: row;
+  gap: 20px;
+  float: right; 
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+
+} */
+
+.services-item {
+  display: none;
+  position: absolute;
+  background-color: #f5f6f7;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.services-item a {
+  float: none;
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left
+}
+.services-item a:hover {
+  background-color: #0070f3;
+  color: #fff;
+}
+
+.servicesbtn {
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background-color: inherit;
+  font-size: 2.0rem;
+}
+
+/* .header .header-right .home , .services, .contact, .about, .account {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: pointer;
+  transition:  0.3s ;
+  font-size: 2.0rem;
+  
+}
+.login-container {
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 2.0rem;
+} */
+/* .header .header-right .login-container .login {
+  border: solid 4px hsl(0, 0%, 100%);
+  border-radius: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: hsl(211, 90%, 48%);
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  
+}
+.header .header-right .login-container .login:hover{
+  background-color: hsl(211, 90%, 38%);
+  text-decoration: underline;
+}
+.header .header-right .home:hover, .contact:hover, .about:hover{
+  background-color:  hsl(219, 85%, 46%);
+  text-decoration: underline;
+} */
+.services:hover .services-item {
+  display: block;
+  background-color:  hsl(219, 85%, 46%);
+  
+}
+.servicesbtn:hover {
+  text-decoration: underline;
+}
+
+.account-container {
+  display: flex;
+  float: right;
+}
+.user-pic {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-top: 18px;
+  margin-left: 30px;
+  margin-right: 10px;
+  border: solid 3px hsl(0, 6%, 97%);
+}
+.user-pic:hover {
+  background-color: hsl(214, 73%, 50%);
+  opacity: 0.5;
+  
+}
+.sub-menu {
+  float: right;
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 0px;
+  /* max-width: 320px; */
+  max-height: 320px;
+
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.user-info h3 {
+  font-size: 1.0rem;
+  font-weight: 300;
+}
+.user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+/* .sub-menu hr {
+  border: 0;
+  height: 1;
+  width: 100%;
+  background: #070707;
+  margin: 15px 0 10px;
+} */
+.sub-menu-link{
+  display: flex;
+  text-align: left;
+  /* padding: 12px 15px; */
+  text-decoration: none;
+  color: #525252;
+  margin: 10px 20px;
+}
+.sub-menu-link p {
+  margin: 7px 10px;
+  width: 100%;
+  font-size: 1.0rem;
+}
