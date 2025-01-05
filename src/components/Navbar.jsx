@@ -134,6 +134,9 @@ export default function Navbar() {
                             <Link href="/quiz" className="block text-2xl text-blue-600 font-bold hover:text-white no-underline text-start hover:bg-blue-700 py-2 pl-2 transition duration-200 ease-in-out">
                                 Quiz
                             </Link>
+                            <Link href="/test" className="block text-2xl text-blue-600 font-bold hover:text-white no-underline text-start hover:bg-blue-700 py-2 pl-2 transition duration-200 ease-in-out">
+                                Test
+                            </Link>
                         </div>
                     </div>
                     <Link href="/about" className={`text-white font-bold rounded-lg px-4 py-2 hover:bg-blue-700 no-underline hover:underline transition duration-200 ease-in-out ${isActive('/about') ? ' bg-green-600 text-4xl' : ' text-3xl'} `}>

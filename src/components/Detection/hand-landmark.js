@@ -7,7 +7,7 @@ import {
 import React, { useEffect, useRef, useState } from 'react';
 import Webcam from 'react-webcam';
 
-export default function HandLandmarks() {
+export default function HandLandmark() {
 	const [handsData, setHandsData] = useState([]);
 	const webcamRef = useRef(null);
 	const canvasRef = useRef(null);
